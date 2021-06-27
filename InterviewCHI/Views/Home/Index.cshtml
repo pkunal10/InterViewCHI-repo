@@ -1,0 +1,31 @@
+﻿@using InterviewCHI.Models;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Pets in the House</h1>
+    <table cellpadding="10" cellspacing="10">
+        <tr>
+            <th>Name</th>
+            <th>Is Palindrom?</th>
+            <th>Type</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Wingspan</th>
+            <th>Action</th>
+        </tr>
+        @foreach (Pet.PetBase pet in (List<Pet.PetBase>)ViewBag.pets)
+        {
+            <tr>
+                <td>@pet.Name</td>
+                <td>@pet.IsNameAPalindrome</td>
+                <td>@pet.Type</td>
+                <td>@pet.Gender</td>
+                <td>@pet.Age</td>
+                <td>TODO</td>
+                <td><button type="button" onclick="speak();">Speak</button></td>
+            </tr>
+        }
+    </table>
+</div>
